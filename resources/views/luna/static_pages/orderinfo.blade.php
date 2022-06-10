@@ -31,23 +31,21 @@
                                 <div class="layui-col-md4">
                                     <ul class="info-ui">
                                         <li>
-                                            <strong>{{ __('luna.order_number') }}:</strong>
+                                            <strong>{{ __('luna.order_number') }}</strong>
                                             {{ $order['order_sn'] }}
                                         </li>
                                         <li>
-                                            <strong>{{ __('order.fields.title') }}:</strong>
+                                            <strong>{{ __('order.fields.title') }}</strong>
                                             {{ $order['title'] }}
                                         </li>
-                                        <li><strong>{{ __('order.fields.buy_amount') }}
-                                                :</strong> {{ $order['buy_amount'] }}</li>
-                                        <li><strong>{{ __('order.fields.order_created') }}
-                                                :</strong> {{ $order['created_at'] }}
-                                        <li><strong>{{ __('order.fields.email') }}:</strong> {{ $order['email'] }}</li>
+                                        <li><strong>{{ __('order.fields.buy_amount') }}</strong> {{ $order['buy_amount'] }}</li>
+                                        <li><strong>{{ __('order.fields.order_created') }}</strong> {{ $order['created_at'] }}
+                                        <li><strong>{{ __('order.fields.email') }}</strong> {{ $order['email'] }}</li>
                                     </ul>
                                 </div>
                                 <div class="layui-col-md4">
                                     <ul class="info-ui">
-                                        <li><strong>{{ __('order.fields.type') }}:</strong>
+                                        <li><strong>{{ __('order.fields.type') }}</strong>
                                             @if($order['type'] == \App\Models\Order::AUTOMATIC_DELIVERY)
                                                 <span class="small-tips tips-green">
                                                     {{ __('goods.fields.automatic_delivery') }}
@@ -59,11 +57,11 @@
                                             @endif
                                         </li>
                                         <li>
-                                            <strong>{{ __('order.fields.actual_price') }}:</strong>
+                                            <strong>{{ __('order.fields.actual_price') }}</strong>
                                             <span
                                                 class="small-tips tips-green">{{ __('dujiaoka.money_symbol') }}{{ $order['actual_price'] }}</span>
                                         </li>
-                                        <li><strong>{{ __('order.fields.status') }}:</strong>
+                                        <li><strong>{{ __('order.fields.status') }}</strong>
 
                                             @switch($order['status'])
                                                 @case(\App\Models\Order::STATUS_EXPIRED)
@@ -104,8 +102,7 @@
                                                 @break
                                             @endswitch
                                         </li>
-                                        <li><strong>{{ __('dujiaoka.payment_method') }}
-                                                :</strong> {{ $order['pay']['pay_name'] ?? ''  }}</li>
+                                        <li><strong>{{ __('dujiaoka.payment_method') }}</strong> {{ $order['pay']['pay_name'] ?? ''  }}</li>
                                     </ul>
                                 </div>
                                 @php $info =''; @endphp
