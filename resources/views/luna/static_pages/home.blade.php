@@ -99,6 +99,8 @@
     <script>
         let title    = "{{ __('dujiaoka.site_announcement') }}",
             goodsMsg = {!! json_encode($data) !!};
+        let _goods = []; for (const cat of goodsMsg) _goods = _goods.concat(cat.goods);
+        goodsMsg.unshift({ gp_name: "全部", goods: _goods });
     </script>
 @endsection
 
