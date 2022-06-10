@@ -52,5 +52,8 @@ Route::group(['prefix' => 'pay', 'namespace' => 'Pay', 'middleware' => ['dujiaok
     Route::get('epusdt/{payway}/{orderSN}', 'EpusdtController@gateway');
     Route::post('epusdt/notify_url', 'EpusdtController@notifyUrl');
     Route::get('epusdt/return_url', 'EpusdtController@returnUrl')->name('epusdt-return');
-
+    // xorpay
+    Route::get('xorpay/{payway}/{orderSN}', 'XorPayController@gateway');
+    Route::post('xorpay/notify_url', 'XorPayController@notifyUrl');
+    Route::get('xorpay/return_url', 'XorPayController@returnUrl')->name('xorpay-return');
 });
