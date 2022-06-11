@@ -444,7 +444,7 @@ class OrderProcessService
         $this->goodsService->inStockDecr($order->goods_id, $order->buy_amount);
         // 邮件数据
         $mailData = [
-            'created_at' => $order->create_at,
+            'created_at' => $order->created_at,
             'product_name' => $order->goods->gd_name,
             'webname' => dujiaoka_config_get('text_logo', '独角数卡'),
             'weburl' => config('app.url') ?? 'http://dujiaoka.com',
@@ -453,7 +453,6 @@ class OrderProcessService
             'order_id' => $order->order_sn,
             'buy_amount' => $order->buy_amount,
             'ord_price' => $order->actual_price,
-            'created_at' => $order->created_at,
         ];
         $tpl = $this->emailtplService->detailByToken('manual_send_manage_mail');
         $mailBody = replace_mail_tpl($tpl, $mailData);
@@ -493,7 +492,7 @@ class OrderProcessService
         $this->carmisService->soldByIDS($ids);
         // 邮件数据
         $mailData = [
-            'created_at' => $order->create_at,
+            'created_at' => $order->created_at,
             'product_name' => $order->goods->gd_name,
             'webname' => dujiaoka_config_get('text_logo', '独角数卡'),
             'weburl' => config('app.url') ?? 'http://dujiaoka.com',
