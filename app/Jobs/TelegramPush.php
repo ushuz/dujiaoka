@@ -64,9 +64,10 @@ class TelegramPush implements ShouldQueue
             . __('order.fields.order_sn') .': `'.$this->order->order_sn.'`%0A'
             . __('order.fields.title') .': '.$this->order->title.'%0A'
             . __('order.fields.actual_price') .': '.$this->order->actual_price.'%0A'
+            . __('order.fields.pay_id') .': '.$this->order->pay_id.'%0A'
             . __('order.fields.email') .': `'.$this->order->email.'`%0A'
             . __('order.fields.order_created') .': '.$this->order->created_at;
-            . __('goods.fields.in_stock') .': `'.$goodInfo->in_stock.'`%0A'
+            . __('goods.fields.in_stock') .': '.$goodInfo->in_stock.'%0A'
         $client = new Client([
             'timeout' => 30,
             'proxy'=> ''
